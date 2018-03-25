@@ -1,0 +1,28 @@
+#text {
+  background-color: #292929;
+  color: #fafafa;
+  font-family: "Comic Sans MS", Comic Sans, cursive;
+  font-size: 17px;
+  text-align: center;
+}
+body {
+  background-color: #323232;
+}
+.button {
+  border-style: solid;
+  border-color: #292929;
+  background-color: #494949;
+  border-radius: 25px;
+  margin: 10px;
+  font-size: 15px;
+}
+#buttonHolder {
+  background-color: #292929;
+  color: #fafafa;
+  text-align: center;
+}
+#restartHolder {
+  background-color: #292929;
+  color: #fafafa;
+  text-align: center;
+}

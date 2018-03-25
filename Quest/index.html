@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=windows-1251" />
+	<title>Quest</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	
+<script>
+	$(function(){
+		var questionAnswers = "";
+		var yes = $("#yes");
+		var no = $("#no");
+		var text = $("#text");
+		var restart = $("#restart");
+		var options = {
+			Y: "Вы проснулись на острове ночью. Последнее что вы помните то, что вы тонули. Вы решаете остаться здесь ненадолго пока вас кто-нибудь не найдёт.",
+			YY: "Вы увидели высокое дерево с кокосом на нём. Нужен ли вам он?",
+			YN: "Вы заснули. Спустя некоторое время, вы проснулись полны сил и энергии, но вы все ещё голдны. Пойдёте ли вы рыбачить?",
+			YNY: "Вы словили две рыбы. Будете ли вы их есть?",
+			YYN: "Вы решили порыбачить. Вы словили рыбу и съели её. Пойдёте ли вы спать?",
+			YYNY: "Вы проснулись и вы решили что время построить палатку. Будете ли вы искать пещеру?",
+			YNYY: "Пойдёте ли вы спать?",
+			YYNYN: "Вы построили палатку из дерева. Всю оставшуюся жизнь вы прожили щасливо!",
+			YNYYN: "Вы умерли от сонливости.",
+			N: "Ok((",
+			YYY: "Вы залезли на дерево, взяли кокос, упали и разбились.",
+			YNN: "Вы умерли от голода.",
+			YYNN: "Вы умерли от сонливости.",
+			YNYN: "Вы умерли от голода.",
+			YYNYY: "Вы нашли пещеру. Вы зашли туда и нашли единорога. Единорог посмотрел на вас и превратил вас в камень. Вы умерли.",
+			YNYYY: "Вы проснулись и увидели медведя. Он вас съел и вы умерли.",
+			YNYYNN: "Вы умерли от сонливости.",
+			YNYYNY: "Вы проснулись и остались на острове, пока вы не умерли от старости.",
+			YYNYY: "Вы нашли пещеру. Вы зашли туда и нашли единорога. Единорог посмотрел на вас и превратил вас в камень. Вы умерли."
+		};
+		yes.click(function(){
+			questionAnswers = questionAnswers + "Y";
+			updateText(questionAnswers);
+		});
+		no.click(function(){
+			questionAnswers = questionAnswers + "N";
+			updateText(questionAnswers);
+		});
+		restart.click(function(){
+			questionAnswers = "";
+			text.text("Готов?");
+		});
+		function updateText() {
+			text.text(options[questionAnswers]);
+		};
+	});
+
+</script>
+
+<div id="text">Готов?</div>
+<div id="buttonHolder">
+  <button id="yes" class="button">да</button>
+  <button id="no" class="button">нет</button>
+</div>
+<div id="restartHolder">
+ <button id="restart" class="button">сначала</button>
+</div>
+
+
+</body>
+</html>
